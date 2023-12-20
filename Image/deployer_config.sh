@@ -2,7 +2,8 @@
 # construction des images à partir des dockerfiles
 docker build ./dockerfiles/R1AS -t image_routeur_r1as
 docker build ./dockerfiles/R2 -t image_routeur_r2
-docker build ./dockerfiles/R2EN -t image_routeur_r2en
+docker build ./dockerfiles/ResEntreprise/R1EN -t image_routeur_r1en
+docker build ./dockerfiles/ResEntreprise/R2EN -t image_routeur_r2en
 docker build ./dockerfiles/R2EX -t image_routeur_r2ex
 docker build ./dockerfiles/R3 -t image_routeur_r3
 docker build ./dockerfiles/PRIVE_ENTREPRISE/SERVEUR -t image_serv_dhcp 
