@@ -1,0 +1,13 @@
+; /var/bind/projet.reseau.zone
+
+$TTL 86400
+
+@ IN SOA projet.reseau. root.projet.reseau. (
+				2	; Serial
+  			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+
+@      IN NS www.projet.reseau.
+www   IN A 172.22.227.250
