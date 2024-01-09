@@ -12,4 +12,4 @@ COPY script.sh /usr/local/bin/script.sh
 RUN chmod +x /usr/local/bin/script.sh
 
 # Run the network setup script when the container starts
-CMD ["/usr/local/bin/script.sh"] && /etc/init.d/quagga start && /bin/bash
+CMD ["/usr/local/bin/script.sh"]
