@@ -12,4 +12,4 @@ COPY named.conf /etc/bind/named.conf
 COPY named.conf.options /etc/bind/named.conf.options
 COPY projet.reseau.zone /var/bind/projet.reseau.zone
 
-CMD /etc/init.d/bind9 start && tail -f /dev/null && ls -l /etc/bind && ls -l /var/bind
+CMD /etc/init.d/bind9 start && tail -f /dev/null

@@ -1,4 +1,3 @@
 #!/bin/sh
-docker kill R1AS R2 R2EN R2EX SDHCP MACHINE1 MACHINE2 WEB BOX1 BOX2 R3
-docker rm R1AS R2 R2EN R2EX SDHCP MACHINE1 MACHINE2 WEB BOX1 BOX2 R3
-docker network rm r_en r_as r_dhcp_routeur r_prive r_fai r_ext
+docker kill container_box1 container_box2 container_privee_machine1 container_privee_machine2 container_r1 container_r1en container_r2 container_r2en container_r3 container_r4 container_dns
+docker rm container_box1 container_box2 container_privee_machine1 container_privee_machine2 container_r1 container_r1en container_r2 container_r2en container_r3 container_r4 container_dns
