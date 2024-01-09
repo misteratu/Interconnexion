@@ -5,8 +5,8 @@
 
 ip link set dev eth0 up
 ip link set dev eth1 up
-ip addr add flush dev eth0
-ip addr add flush dev eth1
+#ip addr add flush dev eth0
+#ip addr add flush dev eth1
 
 # adresses
 
