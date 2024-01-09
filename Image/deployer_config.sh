@@ -2,7 +2,8 @@
 # construction des images à partir des dockerfiles
 docker build ./dockerfiles/BOX1 -t image_routeur_box1
 docker build ./dockerfiles/BOX2 -t image_routeur_box2
-docker build ./dockerfiles/PRIVEE -t image_routeur_privee
+docker build ./dockerfiles/PRIVEE/Machine1 -t image_routeur_privee_machine1
+docker build ./dockerfiles/PRIVEE/Machine2 -t image_routeur_privee_machine2
 docker build ./dockerfiles/R1 -t image_routeur_r1
 docker build ./dockerfiles/R1EN -t image_routeur_r1en
 docker build ./dockerfiles/R2 -t image_routeur_r2
