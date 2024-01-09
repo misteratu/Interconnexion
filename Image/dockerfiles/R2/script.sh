@@ -18,3 +18,7 @@ ip addr add 120.0.40.1/22 dev eth1
 
 ip route add 120.0.32.0/21 via 120.0.46.3
 ip route add 120.0.40.0/22 via 120.0.46.4
+
+# boucle infinie pour garder le container ouvert
+
+while true; do sleep 1000; done

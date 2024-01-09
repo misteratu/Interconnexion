@@ -9,9 +9,7 @@ RUN chown bind:bind /var/log/bind9
 
 COPY hosts /etc/bind/hosts
 COPY named.conf /etc/bind/named.conf
-COPY named.conf.default-zones /etc/bind/named.conf.default-zones
-COPY named.conf.local /etc/bind/named.conf.local
 COPY named.conf.options /etc/bind/named.conf.options
-COPY projet.reseau.zone /etc/bind/projet.reseau.zone
+COPY projet.reseau.zone /var/bind/projet.reseau.zone
 
-CMD /etc/init.d/bind9 start && tail -f /dev/null
+CMD /etc/init.d/bind9 start && tail -f /dev/null && ls -l /etc/bind && ls -l /var/bind
