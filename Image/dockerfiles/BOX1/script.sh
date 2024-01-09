@@ -3,7 +3,10 @@
 
 # interfaces
 
+ip link add eth0 type veth peer name eth0-cont
+
 ip link set dev eth0 up
+ip link set dev eth0-cont up
 #ip addr add flush dev eth0
 
 # adresses
