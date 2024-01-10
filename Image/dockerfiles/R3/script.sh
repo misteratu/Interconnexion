@@ -2,20 +2,20 @@
 
 # interfaces
 
-ip link add eth0 type veth peer name eth0-cont
-ip link add eth1 type veth peer name eth1-cont
+#ip link add eth0 type veth peer name eth0-cont
+#ip link add eth1 type veth peer name eth1-cont
 
-ip link set dev eth0 up
-ip link set dev eth1 up
-ip link set dev eth0-cont up
-ip link set dev eth1-cont up
+#ip link set dev eth0 up
+#ip link set dev eth1 up
+#ip link set dev eth0-cont up
+#ip link set dev eth1-cont up
 #ip addr add flush dev eth0
 #ip addr add flush dev eth1
 
 # adresses
 
-ip addr add 120.0.46.3/23 dev eth0
-ip addr add 120.0.32.1/21 dev eth1
+#ip addr add 120.0.46.3/23 dev eth0
+#ip addr add 120.0.32.1/21 dev eth1
 
 # routes
 
