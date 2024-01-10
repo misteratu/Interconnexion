@@ -2,16 +2,16 @@
 
 # interfaces
 
-#ip link add eth1 type veth peer name eth1-cont
+ip link add eth1 type veth peer name et2 type veth
 
-#ip link set dev eth0 up
-#ip link set dev eth1 up
+ip link set dev eth1 up
+ip link set dev eth2 up
 #ip link set dev eth1-cont up
 
 # adresses
 
-#ip addr add 120.0.46.2/23 dev eth0
-#ip addr add 120.0.44.1/22 dev eth1
+ip addr add 120.0.46.2/23 dev eth1
+ip addr add 120.0.44.1/22 dev eth2
 
 # routes
 
