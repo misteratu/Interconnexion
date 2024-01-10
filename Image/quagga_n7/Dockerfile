@@ -5,4 +5,4 @@ RUN apt-get -f install
 COPY  ./quagga /etc/quagga
 RUN mkdir /etc/scripts
 ENV PATH "/etc/scripts:$PATH"
-ENTRYPOINT /etc/init.d/quagga start && /bin/bash
+CMD /etc/init.d/quagga start && /bin/bash

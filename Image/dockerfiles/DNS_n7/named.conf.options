@@ -1,7 +1,7 @@
 // /etc/bind/named.conf.options
 
 options {
-	//directory "/var/cache/bind";
+	directory "/var/cache/bind";
 
 	// If there is a firewall between you and nameservers you want
 	// to talk to, you may need to fix the firewall to allow multiple
@@ -22,10 +22,19 @@ options {
 	//========================================================================
 	dnssec-validation auto;
 
-	//auth-nxdomain no;    # conform to RFC1035
+	auth-nxdomain yes;
 	listen-on-v6 { any; };
-	listen-on { any };
+	statistics-file "/var/cache/bind/named.stats";
+	 rrset-order {order cyclic;};
 allow-recursion { 127.0.0.1; };
 
 };
 
+logging {
+    channel b_query {
+            file "/var/log/bind9/query.log" versions 2 size 1m;
+            print-time yes;
+            severity info;
+    };
+    category queries { b_query; };
+};
