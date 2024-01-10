@@ -15,7 +15,7 @@
 # adresses
 
 #ip addr add 120.0.46.2/23 dev eth0
-#ip addr add 120.0.40.1/22 dev eth1
+#ip addr add 120.0.44.1/22 dev eth1
 
 # routes
 
