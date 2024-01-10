@@ -36,19 +36,6 @@ docker network create --subnet=120.0.40.0/22 --driver=bridge ReseauEntreprise
 docker network create --subnet=120.0.32.0/21 --driver=bridge ReseauClient
 docker network create --subnet=120.0.44.0/23 --driver=bridge ReseauService
 
-# Connexion aux réseaux 
-#docker network connect ReseauClient container_box1
-#docker network connect ReseauClient container_box2
-#docker network connect ReseauClient container_privee_machine1
-#docker network connect ReseauClient container_privee_machine2
-#docker network connect ReseauBackBone container_r1
-#docker network connect ReseauEntreprise container_r1en
-#docker network connect ReseauBackBone container_r2
-#docker network connect ReseauEntreprise container_r2en
-#docker network connect ReseauClient container_r3
-#docker network connect ReseauBackBone container_r4
-#docker network connect ReseauService container_dns
-
 # Création interfaces
 docker network connect --ip 120.0.32.2 --alias eth0 ReseauClient container_box1
 docker network connect --ip 120.0.46.1 --alias eth0 ReseauBackBone container_r1
