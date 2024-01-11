@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # interfaces
 
 ip link add eth1 type veth peer name eth2 type veth
