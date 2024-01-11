@@ -6,12 +6,14 @@
 ip link add eth1 type veth peer name eth2 type veth
 
 ip link set dev eth1 up
+ip link set dev eth2 up
 #ip addr add flush dev eth0
 
 # adresses
 
 ip addr add 120.0.40.3/22 dev eth1
-
+ip addr add 192.168.199.1/24 dev eth2
+service isc-dhcp-server restart
 # quagga
 
 /etc/init.d/zebra start

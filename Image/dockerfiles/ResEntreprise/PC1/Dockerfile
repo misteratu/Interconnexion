@@ -1,9 +1,8 @@
 FROM debian:buster-slim
 RUN apt-get -y update
-RUN apt-get -y install iptables apt-utils lsb-base iproute2 net-tools systemd telnet nano iputils-ping tcpdump inetutils-traceroute quagga curl
+RUN apt-get -y install iptables apt-utils lsb-base iproute2 net-tools systemd telnet nano iputils-ping tcpdump inetutils-traceroute quagga curl isc-dhcp-client
 RUN apt-get -f install
 
-COPY ./quagga /etc/quagga
 
 # Copy the script.sh script into the container
 COPY script.sh /usr/local/bin/script.sh

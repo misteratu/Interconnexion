@@ -1,4 +1,0 @@
-#!/bin/bash
-ip link set dev eth0 up
-ip addr add 192.168.198.2/24 dev eth0
-service isc-dhcp-server restart
