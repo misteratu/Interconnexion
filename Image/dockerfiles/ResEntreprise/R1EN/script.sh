@@ -46,10 +46,10 @@ iptables -t nat -A POSTROUTING -j SNAT -o eth1 --to-source 120.0.40.3
 #iptables -d 8.25.5.0/24 -A OUTPUT -j ACCEPT
 
 #ajout d'accept et de redirection pour le serveur web privé
-#iptables -i eth1 -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 192.168.198.3:80
-#iptables -i eth0 -d 120.0.40.3 -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 192.168.198.3:80
-#iptables -i eth1 -p tcp --dport 80 -A FORWARD -j ACCEPT
-#iptables -i eth1 -p tcp --dport 80 -A INPUT -j ACCEPT
+iptables -i eth1 -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 192.168.198.3:80
+iptables -i eth0 -d 120.0.40.3 -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 192.168.198.3:80
+iptables -i eth1 -p tcp --dport 80 -A FORWARD -j ACCEPT
+iptables -i eth1 -p tcp --dport 80 -A INPUT -j ACCEPT
 
 ############# ASUPPRIMER SI ON NE VEUT PLUS PING SITEWEB ########
 #accepte de transmettre icmp vers la dmz pour le ping vers le DNS

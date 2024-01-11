@@ -1,6 +1,6 @@
 FROM debian:buster-slim
 RUN apt-get -y update
-RUN apt-get -y install iptables apt-utils lsb-base iproute2 net-tools systemd telnet nano iputils-ping tcpdump inetutils-traceroute quagga curl isc-dhcp-client
+RUN apt-get -y install iptables apt-utils lsb-base iproute2 net-tools systemd telnet nano iputils-ping tcpdump inetutils-traceroute quagga curl wget isc-dhcp-client libreadline-dev
 RUN apt-get -f install
 
 

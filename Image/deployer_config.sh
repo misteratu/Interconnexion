@@ -18,7 +18,7 @@ docker build ./dockerfiles/R1 -t image_routeur_r1
 # build resEntreprise
 docker build ./dockerfiles/ResEntreprise/R1EN -t image_routeur_r1en
 docker build ./dockerfiles/ResEntreprise/PC1 -t image_pcen1
-
+docker build ./dockerfiles/ResEntreprise/ServeurWeb1 -t image_sw1
 
 docker build ./dockerfiles/R2 -t image_routeur_r2
 #docker build ./dockerfiles/R2EN -t image_routeur_r2en
@@ -37,6 +37,7 @@ docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name c
 #creation container reseau privé entreprise
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_r1en image_routeur_r1en
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_pcen1 image_pcen1
+docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_sw1 image_sw1
 
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_r2 image_routeur_r2
 #docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_r2en image_routeur_r2en
@@ -56,6 +57,7 @@ docker start container_r1
 #start container reseau entreprise
 docker start container_r1en
 docker start container_pcen1
+docker start container_sw1
 
 docker start container_r2
 #docker start container_r2en
@@ -89,7 +91,7 @@ docker network connect ReseauEntreprise container_r1en
 
 docker network connect ReseauPriveEntreprise1 container_r1en
 docker network connect ReseauPriveEntreprise1 container_pcen1
-
+docker network connect ReseauPriveEntreprise1 container_sw1
 
 # Création interfaces
 
