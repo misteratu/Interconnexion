@@ -11,7 +11,7 @@ ip link set dev eth2 up
 
 # adresses
 
-ip addr add 120.0.46.1/23 dev eth1
+ip addr add 120.0.44.2/23 dev eth1
 
 # routes
 
@@ -19,18 +19,12 @@ ip addr add 120.0.46.1/23 dev eth1
 #ip route add 120.0.44.0/23 via 120.0.46.2
 #ip route add 120.0.32.0/21 via 120.0.46.3
 
-# quagga
+# quagga et bind9
 
 /etc/init.d/zebra start
 /etc/init.d/ospfd start
-
-# Afficher la configuration OSPF
-echo "Configuration OSPF:"
-vtysh -c 'show running-config'
-
-# Afficher les voisins OSPF
-echo "Voisins OSPF:"
-vtysh -c 'show ip ospf neighbor'
+/etc/init.d/bind9 start
+tail -f /dev/null
 
 # boucle infinie pour garder le container ouvert
 

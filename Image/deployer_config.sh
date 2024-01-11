@@ -19,6 +19,7 @@ docker build ./dockerfiles/R2 -t image_routeur_r2
 docker build ./dockerfiles/R3 -t image_routeur_r3
 docker build ./dockerfiles/R4 -t image_routeur_r4
 docker build ./dockerfiles/DNS_n7 -t image_dns
+docker build ./dockerfiles/VOIP -t image_voip
 
 # Création des containers
 
@@ -33,6 +34,7 @@ docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name c
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_r3 image_routeur_r3
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_r4 image_routeur_r4
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_dns image_dns
+docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_voip image_voip
 
 # Démarrage des containers
 
@@ -47,6 +49,7 @@ docker start container_r2
 docker start container_r3
 docker start container_r4
 docker start container_dns
+docker start container_voip
 
 # Création des Réseaux docker (bridge)
 
@@ -69,15 +72,5 @@ docker network connect ReseauClient container_r3
 docker network connect ReseauBackBone container_r4
 docker network connect ReseauEntreprise container_r4
 docker network connect ReseauPrive1 container_privee_machine1
-
-# Création interfaces
-
-#docker network connect --ip 120.0.32.2 --alias eth0 ReseauClient container_box1
-#docker network connect --ip 120.0.46.1 --alias eth0 ReseauBackBone container_r1
-#docker network connect --ip 120.0.40.3 --alias eth0 ReseauEntreprise container_r1en
-#docker network connect --ip 120.0.46.2 --alias eth0 ReseauBackBone container_r2
-#docker network connect --ip 120.0.44.1 --alias eth1 ReseauService container_r2
-#docker network connect --ip 120.0.46.3 --alias eth0 ReseauBackBone container_r3
-#docker network connect --ip 120.0.32.1 --alias eth1 ReseauClient container_r3
-#docker network connect --ip 120.0.46.4 --alias eth0 ReseauBackBone container_r4
-#docker network connect --ip 120.0.40.1 --alias eth1 ReseauEntreprise container_r4
+docker network connect ReseauService container_dns
+docker network connect ReseauService container_voip
