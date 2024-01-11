@@ -1,18 +1,19 @@
 #!/bin/bash
 
+ip link add eth1 type veth peer name eth2 type veth
+
 # Interface Réseaux Client
+ip link set dev eth1 up
 ip addr add 120.0.32.2/21 dev eth0
-ip link set dev eth0 up
+
 
 # Interface serveur privé
+ip link set dev eth2 up
 ip addr add 192.168.1.1/24 dev eth1
-ip link set dev eth1 up
 
 # Activation du routage
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
-# Ajout de la route par défaut 
-ip r a default via 120.0.32.1
 
 # Configuration DHCP
 service isc-dhcp-server start
