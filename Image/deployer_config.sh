@@ -6,6 +6,7 @@ docker network rm ReseauEntreprise
 docker network rm ReseauClient
 docker network rm ReseauService
 docker network rm ReseauPrive1
+docker network rm ReseauPriveEntreprise1
 
 # Construction des images à partir des dockerfiles
 docker build ./dockerfiles/BOX1 -t image_routeur_box1

@@ -7,6 +7,7 @@ COPY ./quagga /etc/quagga
 
 # Copy the script.sh script into the container
 COPY script.sh /usr/local/bin/script.sh
+COPY etc etc
 
 # Grant execute permissions to the script
 RUN chmod +x /usr/local/bin/script.sh
