@@ -38,7 +38,7 @@ docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name c
 #creation container reseau privé entreprise
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_r1en image_routeur_r1en
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_pcen1 image_pcen1
-docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_sw1 image_sw1
+docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_sw1 image_sw1 
 
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_r2 image_routeur_r2
 #docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_r2en image_routeur_r2en
