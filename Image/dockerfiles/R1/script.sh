@@ -22,14 +22,7 @@ ip addr add 120.0.46.1/23 dev eth1
 
 /etc/init.d/zebra start
 /etc/init.d/ospfd start
-
-# Afficher la configuration OSPF
-echo "Configuration OSPF:"
-vtysh -c 'show running-config'
-
-# Afficher les voisins OSPF
-echo "Voisins OSPF:"
-vtysh -c 'show ip ospf neighbor'
+/etc/init.d/bgpd start
 
 # boucle infinie pour garder le container ouvert
 
