@@ -6,5 +6,7 @@ ip link set dev eth1 up
 ip link set dev eth2 up
 dhclient eth1
 
+mumble
+
 
 while true; do sleep 1000; done

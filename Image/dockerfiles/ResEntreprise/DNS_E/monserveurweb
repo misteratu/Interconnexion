@@ -1,0 +1,16 @@
+; Fichier : /var/bind/projet.reseau.zone
+; Définition de la zone "projet.reseau"
+
+$TTL 86400  ; Durée de vie du cache par défaut (en secondes)
+
+@ IN SOA monserveurweb root.monserveurweb (
+    2         ; Numéro de série
+    604800    ; Refresh (rafraîchissement)
+    86400     ; Retry (nouvel essai)
+    2419200   ; Expire (expiration)
+    604800 )  ; Negative Cache TTL (durée de vie du cache négatif)
+
+@    IN NS monserveurweb.  ; Enregistrement de ressource pour le serveur de noms
+
+@  IN A 120.0.40.3       ; Enregistrement de ressource pour l'adresse IP du serveur www (en attente de l'adresse à changer)
+www IN A 120.0.40.3 
