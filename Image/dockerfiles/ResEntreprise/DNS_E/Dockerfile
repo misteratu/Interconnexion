@@ -1,4 +1,4 @@
-FROM debian:bind9
+FROM debian:buster-slim
 
 RUN apt-get -y update && apt-get -y install iptables apt-utils iproute2 net-tools systemd telnet nano iputils-ping tcpdump inetutils-traceroute bind9 && apt-get -f install
 
