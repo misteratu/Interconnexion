@@ -24,6 +24,10 @@ ip addr add 120.0.46.1/23 dev eth1
 /etc/init.d/ospfd start
 /etc/init.d/bgpd start
 
+# BGP 
+
+vtysh -c "show bgp summary"
+
 # boucle infinie pour garder le container ouvert
 
 while true; do sleep 1000; done
