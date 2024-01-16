@@ -7,7 +7,8 @@ ip link set dev eth2 up
 ip addr add 192.168.199.2/24 eth1
 
 # create serveur
-systemctl start apache2
+service apache2 start
 
+/etc/init.d/mumble-server start
 
 while true; do sleep 1000; done
