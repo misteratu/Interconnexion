@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Partie Configuration DHCP
+ip link set dev eth1 up
 dhclient eth1
 
 
