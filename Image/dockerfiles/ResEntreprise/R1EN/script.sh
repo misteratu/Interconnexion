@@ -30,10 +30,10 @@ iptables -t nat -A POSTROUTING -j SNAT -o eth1 --to-source 120.0.40.3
 
 
 #DROP tout
-#iptables --policy FORWARD DROP
-#iptables --policy INPUT DROP
-#iptables --policy OUTPUT DROP
-  
+iptables --policy FORWARD DROP
+iptables --policy INPUT DROP
+iptables --policy OUTPUT DROP
+
 #accepte de forward (et donc input, car nat) les reponses vers le réseau privé
 iptables -d 192.168.198.0/24 -A FORWARD -m conntrack --ctstate ESTABLISHED -j ACCEPT
 iptables -d 192.168.198.0/24 -A INPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
@@ -48,9 +48,12 @@ iptables -s 192.168.199.0/24 -A INPUT -j ACCEPT
 
 #ajout d'accept et de redirection pour le serveur web privé
 iptables -i eth1 -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 192.168.198.4:80
-iptables -i eth2 -d 120.0.40.3 -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 192.168.198.3:80
+iptables -i eth2 -d 120.0.40.3 -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 192.168.198.4:80
 iptables -i eth1 -p tcp --dport 80 -A FORWARD -j ACCEPT
 iptables -i eth1 -p tcp --dport 80 -A INPUT -j ACCEPT
+iptables -i eth2 -p tcp --dport 80 -A FORWARD -j ACCEPT
+iptables -i eth2 -p tcp --dport 80 -A INPUT -j ACCEPT
+iptables -i eth2 -p tcp --dport 80 -A OUTPUT -j ACCEPT
 
 ############# ASUPPRIMER SI ON NE VEUT PLUS PING SITEWEB ########
 #accepte de transmettre icmp vers la dmz pour le ping vers le DNS
