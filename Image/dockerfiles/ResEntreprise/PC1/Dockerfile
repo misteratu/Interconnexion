@@ -12,6 +12,6 @@ COPY script.sh /usr/local/bin/script.sh
 
 # Grant execute permissions to the script
 RUN chmod +x /usr/local/bin/script.sh
-
+COPY resolv.conf etc/resolv.conf
 # Run the network setup script when the container starts
 CMD ["/usr/local/bin/script.sh"]
