@@ -27,6 +27,7 @@ docker build ./dockerfiles/R2 -t image_routeur_r2
 docker build ./dockerfiles/R3 -t image_routeur_r3
 docker build ./dockerfiles/R4 -t image_routeur_r4
 docker build ./dockerfiles/DNS_n7 -t image_dns
+docker build ./dockersfiles/VOIP -t image_voip
 
 # Création des containers
 
@@ -49,6 +50,7 @@ docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name c
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_r3 image_routeur_r3
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_r4 image_routeur_r4
 docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_dns image_dns
+docker create --cap-add=NET_ADMIN --cap-add=NET_RAW --cap-add=SYS_ADMIN --name container_voip image_voip
 
 # Démarrage des containers
 
@@ -70,6 +72,7 @@ docker start container_r2
 docker start container_r3
 docker start container_r4
 docker start container_dns
+docker start container_voip
 
 # Création des Réseaux docker (bridge)
 
@@ -99,6 +102,7 @@ docker network connect ReseauPriveEntreprise1 container_r1en
 docker network connect ReseauPriveEntreprise1 container_pcen1
 docker network connect ReseauPriveEntreprise1 container_sw1
 docker network connect ReseauPriveEntreprise1 container_dnse
+docker network connect ReseauService container_voip
 
 # Création interfaces
 
